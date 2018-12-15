@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions targetNamespace="http://www.example.org/web4/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.example.org/web4/" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/">
+  <WL5G3N0:types>
+    <xsd:schema targetNamespace="http://www.example.org/web4/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://www.example.org/web4/" xmlns:intf="http://www.example.org/web4/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="NewOperation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="NewOperationRequest">
+    <WL5G3N0:part element="WL5G3N1:NewOperation" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="NewOperationResponse">
+    <WL5G3N0:part element="WL5G3N1:NewOperationResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="web4">
+    <WL5G3N0:operation name="NewOperation">
+      <WL5G3N0:input message="WL5G3N1:NewOperationRequest" name="NewOperationRequest"/>
+      <WL5G3N0:output message="WL5G3N1:NewOperationResponse" name="NewOperationResponse"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="service4SoapBinding" type="WL5G3N1:web4">
+    <WL5G3N2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="NewOperation">
+      <WL5G3N2:operation soapAction="http://www.example.org/web4/NewOperation"/>
+      <WL5G3N0:input name="NewOperationRequest">
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output name="NewOperationResponse">
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="web4">
+    <WL5G3N0:port binding="WL5G3N1:service4SoapBinding" name="service4">
+      <WL5G3N2:address location="http://192.168.244.76:10001/MSServices/web4"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>
