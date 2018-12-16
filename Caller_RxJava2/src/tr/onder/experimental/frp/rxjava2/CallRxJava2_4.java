@@ -17,7 +17,7 @@ import io.reactivex.Flowable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 
-public class CallRxJava2_3 {
+public class CallRxJava2_4 {
 
 	static Web4_Service web4 = new Web4_Service();
 
