@@ -1,4 +1,4 @@
-package tr.onder.experimental.frp.rxjava2;
+package com.github.farukonder.experimenting.frp.rxjava2.service;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +17,7 @@ import io.reactivex.Flowable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 
-public class CallRxJava2_4 {
+public class CallRxJava2_5 {
 
 	static Web4_Service web4 = new Web4_Service();
 
@@ -32,7 +32,7 @@ public class CallRxJava2_4 {
 		Flowable.just(100, 100, 100, 100, 100, 100, 1000)
 //		.subscribeOn(Schedulers.single())
 //		.observeOn(Schedulers.single())
-		.flatMap(w -> Flowable.create(emitter -> web4.getService4().newOperationAsync(w, createHandlerJava8(emitter)),BackpressureStrategy.BUFFER))
+		.flatMap(w -> Flowable.create(emitter -> web4.getService4().newOperationAsync(w, createHandlerJava8(emitter)),BackpressureStrategy.BUFFER).subscribeOn(Schedulers.io()))
 		.blockingSubscribe((i) -> System.out.println("o: " + ((NewOperationResponse) i).getOut()), (e) -> System.out.println("e: " + e));
 //		.toList()
 //        //could implement more intelligent logic. eg. check that everything is successful

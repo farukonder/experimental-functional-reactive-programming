@@ -1,4 +1,4 @@
-package tr.onder.experimental.frp.rxjava2;
+package com.github.farukonder.experimenting.frp.rxjava2.service;
 
 import java.util.concurrent.ExecutionException;
 
@@ -20,7 +20,7 @@ public class CallRxJava2_3 {
 		Observable.just(5000, 100, 100, 100, 100, 9000, 10000)
 		.subscribeOn(Schedulers.single())
 		.observeOn(Schedulers.single())
-		.flatMap(w -> Observable.create(emitter -> web4.getService4().newOperationAsync(w, createHandlerJava8(w,emitter))))
+			.flatMap(w -> Observable.create(emitter -> web4.getService4().newOperationAsync(w, createHandlerJava8(w,emitter))))
 		.blockingSubscribe((i) -> System.out.println("o: " + ((NewOperationResponse) i).getOut()), (e) -> System.out.println("e: " + e));
 		
 	}
