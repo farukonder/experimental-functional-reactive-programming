@@ -1,4 +1,4 @@
-package tr.onder.experimental.frp.reactor;
+package com.github.farukonder.experimenting.frp.reactor;
 
 import java.util.Random;
 import java.util.concurrent.ExecutionException;

@@ -1,0 +1,52 @@
+create1   , subscribeOn1_0 , v1: 1                    , 
+flatMapV2 , subscribeOn1_0 , v1: 1                    , 
+create1   , subscribeOn1_0 , v1: 2                    , 
+create2   , subscribeOn2_0 , v1: 1 count: 1           , 
+flatMapV2 , subscribeOn1_0 , v1: 2                    , 
+flatMapV3 , subscribeOn2_0 , v1: 1 v2: 1              , 
+create2   , subscribeOn2_1 , v1: 2 count: 1           , 
+flatMapV3 , subscribeOn2_1 , v1: 2 v2: 1              , 
+create2   , subscribeOn2_1 , v1: 2 count: 2           , 
+create3   , subscribeOn3_0 , v1: 2 v2: 1 count: 1     , 
+flatMapV3 , subscribeOn2_1 , v1: 2 v2: 2              , 
+create2   , subscribeOn2_0 , v1: 1 count: 2           , 
+flatMapV3 , subscribeOn2_0 , v1: 1 v2: 2              , 
+create3   , subscribeOn3_1 , v1: 1 v2: 1 count: 1     , 
+create3   , subscribeOn3_3 , v1: 1 v2: 2 count: 1     , 
+create3   , subscribeOn3_2 , v1: 2 v2: 2 count: 1     , 
+create3   , subscribeOn3_0 , v1: 2 v2: 1 count: 2     , 
+create3   , subscribeOn3_1 , v1: 1 v2: 1 count: 2     , 
+create3   , subscribeOn3_2 , v1: 2 v2: 2 count: 2     , 
+doOnNext3 , observeOn3_1   , v1: 2 v2: 1              ,  i: 1
+create3   , subscribeOn3_3 , v1: 1 v2: 2 count: 2     , 
+doOnNext3 , observeOn3_0   , v1: 1 v2: 1              ,  i: 1
+doOnNext3 , observeOn3_3   , v1: 2 v2: 2              ,  i: 1
+doOnNext3 , observeOn3_1   , v1: 2 v2: 1              ,  i: 2
+doOnNext3 , observeOn3_2   , v1: 1 v2: 2              ,  i: 1
+doOnNext3 , observeOn3_3   , v1: 2 v2: 2              ,  i: 2
+doOnNext3 , observeOn3_2   , v1: 1 v2: 2              ,  i: 2
+doOnNext2 , observeOn2_1   , v1: 1                    ,  i: map3 , observeOn3_2 , , 1
+doOnNext2 , observeOn2_1   , v1: 1                    ,  i: map3 , observeOn3_2 , , 2
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_1 , , map3 , observeOn3_2 , , 1
+doOnNext3 , observeOn3_0   , v1: 1 v2: 1              ,  i: 2
+doOnNext2 , observeOn2_2   , v1: 1                    ,  i: map3 , observeOn3_0 , , 1
+doOnNext2 , observeOn2_0   , v1: 2                    ,  i: map3 , observeOn3_1 , , 1
+doOnNext2 , observeOn2_0   , v1: 2                    ,  i: map3 , observeOn3_3 , , 1
+doOnNext2 , observeOn2_0   , v1: 2                    ,  i: map3 , observeOn3_1 , , 2
+doOnNext2 , observeOn2_0   , v1: 2                    ,  i: map3 , observeOn3_3 , , 2
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_1 , , map3 , observeOn3_2 , , 2
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_2 , , map3 , observeOn3_0 , , 1
+doOnNext2 , observeOn2_3   , v1: 1                    ,  i: map3 , observeOn3_0 , , 2
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_0 , , map3 , observeOn3_1 , , 1
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_0 , , map3 , observeOn3_3 , , 1
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_0 , , map3 , observeOn3_1 , , 2
+bsubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_1 , , map3 , observeOn3_2 , , 1
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_0 , , map3 , observeOn3_3 , , 2
+bsubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_1 , , map3 , observeOn3_2 , , 2
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_3 , , map3 , observeOn3_0 , , 2
+bsubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_2 , , map3 , observeOn3_0 , , 1
+bsubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_0 , , map3 , observeOn3_1 , , 1
+bsubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_0 , , map3 , observeOn3_3 , , 1
+bsubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_0 , , map3 , observeOn3_1 , , 2
+bsubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_0 , , map3 , observeOn3_3 , , 2
+bsubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_3 , , map3 , observeOn3_0 , , 2

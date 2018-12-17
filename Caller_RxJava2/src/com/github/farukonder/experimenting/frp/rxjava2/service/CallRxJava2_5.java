@@ -14,7 +14,6 @@ import org.example.web4.Web4_Service;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Emitter;
 import io.reactivex.Flowable;
-import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 
 public class CallRxJava2_5 {

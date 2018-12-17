@@ -1,4 +1,4 @@
-package tr.onder.experimental.frp.java;
+package com.github.farukonder.experimenting.frp.java;
 
 import java.util.concurrent.ExecutionException;
 

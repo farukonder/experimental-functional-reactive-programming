@@ -1,0 +1,20 @@
+create1   , subscribeOn1_0 , v1: 1                    , 
+flatMapV2 , subscribeOn1_0 , v1: 1                    , 
+create1   , subscribeOn1_0 , v1: 2                    , 
+create2   , subscribeOn2_0 , v1: 1 count: 1           , 
+flatMapV2 , subscribeOn1_0 , v1: 2                    , 
+create2   , subscribeOn2_1 , v1: 2 count: 1           , 
+create2   , subscribeOn2_0 , v1: 1 count: 2           , 
+create2   , subscribeOn2_1 , v1: 2 count: 2           , 
+doOnNext2 , observeOn2_1   , v1: 2                    ,  i: 1
+doOnNext2 , observeOn2_0   , v1: 1                    ,  i: 1
+doOnNext2 , observeOn2_1   , v1: 2                    ,  i: 2
+doOnNext2 , observeOn2_0   , v1: 1                    ,  i: 2
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_0 , , 1
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_1 , , 1
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_1 , , 2
+doOnNext  , observeOn1_0   ,                          ,  i: map2 , observeOn2_0 , , 2
+bSubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_0 , , 1
+bSubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_1 , , 1
+bSubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_1 , , 2
+bSubscribe, main           ,                          ,  s: map1 , observeOn1_0 , , map2 , observeOn2_0 , , 2

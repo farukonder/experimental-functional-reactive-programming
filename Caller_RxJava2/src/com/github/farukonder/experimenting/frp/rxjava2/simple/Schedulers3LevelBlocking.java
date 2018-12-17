@@ -4,8 +4,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-import com.github.farukonder.experimenting.frp.rxjava2.simple.Schedulers3LevelNonBlocking.WorkerThreadFactory;
-
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
 
